@@ -7,18 +7,12 @@ s.listen()
 
 while True :
     
-
     new_socket, client_address = s.accept()
 
     requests_data = b""
 
-
     ip, port = client_address
     print(f"Client connect from IP : {ip}, Port : {port}")
-
-
-
-
 
     while True :
         data = new_socket.recv(4096)
@@ -38,8 +32,6 @@ while True :
         "thiscomputer"
     )
 
-
     new_socket.sendall(requests.encode("ISO-8859-1"))
-
     new_socket.close()
 
