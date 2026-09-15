@@ -23,6 +23,13 @@ while True :
         if b"\r\n\r\n" in requests_data :
             break
 
+
+    request_sr = requests_data.decode("ISO-8859-1")
+    first_line = request_sr.split("\r\n")[0]
+    method = first_line.split(" ")[0]
+    print(f"Method : {method}")
+
+
     requests = (
         "HTTP/1.1 200 OK\r\n"
         "Content-Type: text/plain\r\n"
